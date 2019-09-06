@@ -52,7 +52,7 @@ int main()
 		std::cin >> file1;
 		std::cout << "\nEnter the file path for the search numbers: ";
 		std::cin >> file2;
-		std::cout << "Confirmed. Using custom files...\n\n";
+		std::cout << "Confirmed. Using custom files...\n";
 		loadFile(file1, numbers);
 		loadFile(file2, search);
 	}
@@ -62,6 +62,9 @@ int main()
 		std::cout << "\n\nIncorrect input. Please relaunch the program.";
 		return 0;
 	}
+
+
+	std::cout << "\n";
 
 	{
 		Timer timer("Time to linear search all values: ");
@@ -76,6 +79,8 @@ int main()
 		std::cout << "Found "<< found << "/"
 			<< search.size() << " values." << std::endl;
 	}
+
+	std::cout << "\n";
 
 	{
 		Timer timer("Time to linear search all values (pointers): ");
@@ -93,7 +98,34 @@ int main()
 
 	// TODO:
 	// repeat the above two blocks but use the binary search functions.
+	std::cout << "\n";
+	{
+		Timer timer("Time to binary search all values: ");
 
+		int found = 0;
+		for (size_t i = 0; i < search.size(); i++)
+		{
+			if (binarySearch(numbers, search[i]))
+				found++;
+		}
+
+		std::cout << "Found "<< found << "/"
+			<< search.size() << " values." << std::endl;
+	}
+	std::cout << "\n";
+	{
+		Timer timer("Time to binary search all values (pointers): ");
+
+		int found = 0;
+		for (size_t i = 0; i < search.size(); i++)
+		{
+			if (binarySearch(numbers.data(), numbers.data() + numbers.size(), search[i]))
+				found++;
+		}
+
+		std::cout << "Found "<< found << "/"
+			<< search.size() << " values." << std::endl;
+	}
 	return 0;
 }
 

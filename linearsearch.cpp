@@ -5,7 +5,7 @@ bool linearSearch(const std::vector<int>& set, int value)
 {
 	// TODO:
 	// implement me
-	for (int i = 0; i <= set.size(); i++)
+	for (size_t i = 0; i <= set.size(); i++)
 	{
 		if(value == set[i])
 		{
