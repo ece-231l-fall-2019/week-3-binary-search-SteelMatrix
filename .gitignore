@@ -1,0 +1,9 @@
+*.o
+*.out
+*.exe
+*.app
+*.dll
+*.so
+*.bin
+genrand
+runtests
