@@ -1,7 +1,7 @@
 #include <vector>
 #include "search.h"
 #include <iostream>
-
+#include <math.h>
 bool binarySearch(const std::vector<int>& set, int value)
 {
 	// TODO:
@@ -11,11 +11,11 @@ bool binarySearch(const std::vector<int>& set, int value)
 
 	while (left < right)
 	{
-		size_t mid = (left + right)/2;
+		size_t mid = floor((left + right)/2);
 
-		if (set[mid] == value)
-			return true;
 		if (set[left] == value)
+			return true;
+		if (set[mid] == value)
 			return true;
 		if (set[right] == value)
 			return true;

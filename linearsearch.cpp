@@ -19,7 +19,7 @@ bool linearSearch(const int *begin, const int *end, int value)
 {
 	// TODO:
 	// implement me
-	for (begin; begin < end; begin++)
+	for (; begin < end; begin++)
 	{
 		if (value == *begin)
 		{
