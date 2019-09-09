@@ -37,7 +37,24 @@ bool binarySearch(const int *begin, const int *end, int value)
 {
 	// TODO:
 	// implement me
-//	int *mid = begin + (end - begin) / 2
+	while(begin < end)
+	{
+		const int *mid = begin + (end - begin) / 2;
+		if (*begin == value)
+			return true;
+		if (*end == value)
+			return true;
+		if (*mid == value)
+			return true;
+		if(*mid > value)
+		{
+			end = mid - 1;
+		}
+		else
+		{
+			begin = mid + 1;
+		}
+	}
 	return false;
 }
 
