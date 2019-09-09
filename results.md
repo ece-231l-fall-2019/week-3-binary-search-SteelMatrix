@@ -9,7 +9,7 @@ Linear search is the simplest search method available. Linear search compares th
 
 The disadvantages of linear search are:
 - Very slow
- - Searches through every single value in a list
+  - Searches through every single value in a list
 - Not optimal for large lists
 
 Binary search is a complex search method that checks over chunks of data. Binary search requires three parameters, the beginning of the list to be sorted, the end of the list to be sorted, and a midpoint, which is calculated by adding the beginning to the end and dividing by 2. When searching for a value, it compares the value to the midpoint. If the value is smaller than the midpoint, the value will lie on the left side of the midpoint, so the position of the end now becomes the midpoint, and the operation repeats. If the value is larger, it will lie on the right side of the midpoint, so the beginning becomes the midpoint, the midpoint is recalculated, and the process repeats again. This allows for large datasets to be narrowed down to smaller, more manageable sizes. The advantages of binary search are:
@@ -54,6 +54,8 @@ The specifications for the computer used are listed below:
 | Binary Search (no pointers) | 237 | 0.0008422 |
 | Binary Search (with pointers) | 237 | 0.0005028 |
 
-A consistent trend in the results shows that the functions that used pointers were significantly faster than those that didn't. This is because in the functions without pointers, the function has to make a copy of the parameters in order to manipulate them. The pointers are faster because, instead of having the program make a copy of each parameter, it references the parameters address. When the value needs to be edited, it just changes the value at the address, instead of recreating the variable and changing it.
+A consistent trend in the results shows that the functions that used pointers were significantly faster than those that didn't. This is because in the functions without pointers, the function has to make a copy of the parameters in order to manipulate them. The pointers are faster because, instead of having the program make a copy of each parameter, it references the parameter's address. When the value needs to be edited, it just changes the value that is stored at the address, instead of copying the parameter and changing it.
+
 The fastest results came from the program compiled with optimizations. The optimizations rearranges and executes the program in a fashion that makes more logical sense to the computer. This allows the computer to calculate values faster.
+
 The slowest results came from the program compiled with debug symbols. The debug symbols allow the user to see exactly how the program executes. This slows down execution because it is providing a way for the user to see if anything is wrong during execution.
