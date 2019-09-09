@@ -48,7 +48,7 @@ int main()
 
 	else if ((confirm == "N") || (confirm == "n"))
 	{
-		std::cout << "\nEnter the file path for the number dataset to search: ";
+		std::cout << "\n#NOTICE#\nBe sure that the data set is sorted (least to greatest)\nEnter the file path for the number dataset to search: ";
 		std::cin >> file1;
 		std::cout << "\nEnter the file path for the search numbers: ";
 		std::cin >> file2;

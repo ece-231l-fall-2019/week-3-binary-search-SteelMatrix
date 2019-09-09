@@ -1,17 +1,14 @@
 #include <vector>
 #include "search.h"
 #include <iostream>
-#include <math.h>
 bool binarySearch(const std::vector<int>& set, int value)
 {
-	// TODO:
-	// implement me
 	size_t left = 0;
 	size_t right = set.size() - 1;
 
 	while (left < right)
 	{
-		size_t mid = floor((left + right)/2);
+		size_t mid = (left + right)/2;
 
 		if (set[left] == value)
 			return true;
@@ -35,8 +32,6 @@ bool binarySearch(const std::vector<int>& set, int value)
 
 bool binarySearch(const int *begin, const int *end, int value)
 {
-	// TODO:
-	// implement me
 	while(begin < end)
 	{
 		const int *mid = begin + (end - begin) / 2;
