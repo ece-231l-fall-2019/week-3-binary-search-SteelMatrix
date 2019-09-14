@@ -5,6 +5,7 @@
 
 #include "Timer.h"
 #include "search.h"
+#include "sort.h"
 
 void loadFile(std::string filename, std::vector<int>& set)
 {
@@ -59,8 +60,16 @@ int main()
 
 	else
 	{
-		std::cout << "\n\nIncorrect input. Please relaunch the program.";
+		std::cout << "\n\nIncorrect input. Please relaunch the program.\n";
 		return 0;
+	}
+
+	bubblesort(search.data(), search.data() + search.size());
+
+	for(size_t i = 0; i < search.size(); i++)
+	{
+		std::cout << search[i] << " ";
+		std::cout << "\n";
 	}
 
 
