@@ -1,8 +1,8 @@
 #include <vector>
 #include "search.h"
 #include <iostream>
-bool binarySearch(const std::vector<int>& set, int value)
-{
+
+bool binarySearch(const std::vector<int>& set, int value) {
 	size_t left = 0;
 	size_t right = set.size() - 1;
 
@@ -30,25 +30,44 @@ bool binarySearch(const std::vector<int>& set, int value)
 	return false;
 }
 
-bool binarySearch(const int *begin, const int *end, int value)
-{
-	while(begin < end)
+bool binarySearch(const int *begin, const int *end, int value) {
+	while(true)
 	{
 		const int *mid = begin + (end - begin) / 2;
-		if (*begin == value)
-			return true;
-		if (*end == value)
-			return true;
+		if ((mid == end)||(begin >= end))
+			return false;
 		if (*mid == value)
 			return true;
 		if(*mid > value)
 		{
-			end = mid - 1;
+			end = mid;
 		}
 		else
 		{
 			begin = mid + 1;
 		}
+	}
+	return false;
+}
+
+bool binarySearchRecursive(const int *begin, const int *end, int value)
+{
+	const int *mid = begin + (end - begin) / 2;
+	if (mid == end)
+		return false;
+	if (*mid == value)
+	{
+		return true;
+	}
+	if (*mid > value)
+	{
+		end = mid;
+		return binarySearchRecursive(begin, end, value);
+	}
+	else
+	{
+		begin = mid + 1;
+		return binarySearchRecursive(begin, end, value);
 	}
 	return false;
 }

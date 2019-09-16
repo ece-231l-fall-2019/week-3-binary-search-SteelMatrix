@@ -15,7 +15,7 @@ bool linearSearch(const std::vector<int>& set, int value)
 
 bool linearSearch(const int *begin, const int *end, int value)
 {
-	for (; begin < end; begin++)
+	for (; begin != end; begin++)
 	{
 		if (value == *begin)
 		{

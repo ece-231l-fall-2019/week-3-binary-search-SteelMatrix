@@ -1,11 +1,11 @@
 #include <vector>
 #include <iostream>
-void swap(int *a, int *b)
+void swap(int *val1, int *val2)
 {
 	int tmp;
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	tmp = *val1;
+	*val1 = *val2;
+	*val2 = tmp;
 }
 
 void bubblesort(int *begin, const int *end)

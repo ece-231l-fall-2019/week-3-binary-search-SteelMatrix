@@ -5,6 +5,9 @@
 bool binarySearch(const std::vector<int>& set, int value);
 bool binarySearch(const int *begin, const int *end, int value);
 
+//Binary Search Recursive Function
+bool binarySearchRecursive(const int *begin, const int *end, int value);
+
 // Linear search functions
 bool linearSearch(const std::vector<int>& set, int value);
 bool linearSearch(const int *begin, const int *end, int value);
